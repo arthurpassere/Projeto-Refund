@@ -89,14 +89,21 @@ function addExpense(solicitation){
 
   newLi.appendChild(removeIcon)
   lists.appendChild(newLi)
+
+  formClear()
 }
 
 function updateTotals(solicitation){
   numSolicitations += 1
-  totalExpenses.textContent = (numSolicitations + " despesas") // atualiza numero de despesas
+  totalExpenses.textContent = (numSolicitations + " despesas") // update total expenses value
   
   totalSolicitations += parseFloat(solicitation.amount.replace(',', '.'));
   totalAmount.innerHTML = `<small>R$</small> ${moneyFormat(totalSolicitations)}`;
 
 }
 
+function formClear(){
+  amount.value = ""
+  expense.value = ""
+  category.value = ""
+}
